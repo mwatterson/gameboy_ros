@@ -1,0 +1,9 @@
+button_mapping:
+  A: 0
+  B: 1
+  Start: 7
+  Select: 6
+axis_mapping:
+  UpDown: 7
+  LeftRight: 6
+  deadzone: 0.1

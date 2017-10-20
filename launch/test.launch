@@ -1,0 +1,14 @@
+<launch>
+	<arg name="file"/>
+	<arg name="mapping_file" default="$(find gameboy_ros)/config/xbox_mapping.yaml"/>
+
+	<node pkg="gameboy_ros" type="gameboy_node" name="gameboy" output="screen">
+		<param name="file" value="$(arg file)"/>
+		<rosparam command="load" file="$(arg mapping_file)"/>
+		<remap from="~input" to="/joy"/>
+	</node>
+	<node pkg="image_view" type="image_view" name="image_view" output="screen" args="image:=/gameboy/image_raw">
+	</node>
+	<node pkg="joy" type="joy_node" name="joy" output="screen"/>
+
+</launch>
