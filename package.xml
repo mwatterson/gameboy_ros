@@ -13,6 +13,9 @@
   <depend>roscpp</depend>
   <depend>image_transport</depend>
 
+  <depend>glut</depend>
+  <depend>sdl2</depend>
+  <depend>libglew-dev</depend>
 
   <export>
   </export>
