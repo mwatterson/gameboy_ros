@@ -15,10 +15,12 @@ file(GLOB GEARBOY_MINIZ external/Gearboy/src/miniz/*.cpp)
 add_library(gearboy ${GEARBOY_MAIN} ${GEARBOY_AUDIO} ${GEARBOY_MINIZ})
 target_link_libraries(gearboy SDL2 GLEW GLU GL)
 
+include_directories(include)
+
 catkin_simple()
 
 # Build ROS Node
-cs_add_executable(gameboy_node src/gameboy_node.cpp)
+cs_add_executable(gameboy_node src/joy_monitor.cpp src/main.cpp src/node.cpp)
 target_link_libraries(gameboy_node gearboy)
 
 
